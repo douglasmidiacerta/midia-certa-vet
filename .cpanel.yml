@@ -1,18 +1,13 @@
 ---
 deployment:
   tasks:
-    # Definir caminho de destino
-    - export DEPLOYPATH=/home2/mc/public_html/vet
-    
-    # Copiar arquivos principais
-    - /bin/cp index-cpanel.html $DEPLOYPATH/index.html
-    - /bin/cp styles.css $DEPLOYPATH/styles.css
-    - /bin/cp script.js $DEPLOYPATH/script.js
+    # Renomear index-cpanel.html para index.html
+    - /bin/cp index-cpanel.html index.html
     
     # Criar arquivo de log
-    - echo "Deploy realizado em $(date)" >> $DEPLOYPATH/deploy.log
+    - echo "Deploy realizado em $(date)" >> deploy.log
     
     # Definir permissões corretas
-    - /bin/chmod 644 $DEPLOYPATH/index.html
-    - /bin/chmod 644 $DEPLOYPATH/styles.css
-    - /bin/chmod 644 $DEPLOYPATH/script.js
+    - /bin/chmod 644 index.html
+    - /bin/chmod 644 styles.css
+    - /bin/chmod 644 script.js
