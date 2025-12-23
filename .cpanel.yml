@@ -1,8 +1,9 @@
 ---
 deployment:
   tasks:
-    # Definir permissões corretas para os arquivos
-    - /bin/chmod 644 index.html
-    - /bin/chmod 644 styles.css
-    - /bin/chmod 644 script.js
-    - /bin/chmod 755 .
+    # Definir permissões corretas para o diretório e arquivos
+    - export DEPLOYPATH
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/chmod 644 $DEPLOYPATH/index.html
+    - /bin/chmod 644 $DEPLOYPATH/styles.css
+    - /bin/chmod 644 $DEPLOYPATH/script.js
