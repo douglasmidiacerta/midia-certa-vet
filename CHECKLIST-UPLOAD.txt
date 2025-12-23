@@ -1,0 +1,185 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   ✅ CHECKLIST DE UPLOAD - LANDING PAGE VETERINÁRIA              ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════
+📋 FASE 1: PERSONALIZAÇÃO (ANTES DO UPLOAD)
+═══════════════════════════════════════════════════════════════════
+
+Abra o arquivo "index-cpanel.html" em um editor de texto e substitua:
+
+[ ] 1. NÚMERO DO WHATSAPP
+    Procure: 5531999999999
+    Linha: ~470
+    Substitua por: ___________________________
+
+[ ] 2. NÚMERO DO TELEFONE
+    Procure: 5531999999999
+    Linha: ~472
+    Substitua por: ___________________________
+
+[ ] 3. EMAIL NO FOOTER
+    Procure: contato@midiacertavet.com.br
+    Linha: ~531
+    Substitua por: ___________________________
+
+[ ] 4. ENDEREÇO NO FOOTER
+    Procure: Belo Horizonte, MG
+    Linha: ~532
+    Substitua por: ___________________________
+
+[ ] 5. NOME DA MARCA (OPCIONAL)
+    Procure: Mídias Certa Vet
+    Linhas: ~34, ~507
+    Substitua por: ___________________________
+
+
+═══════════════════════════════════════════════════════════════════
+📤 FASE 2: UPLOAD NO CPANEL
+═══════════════════════════════════════════════════════════════════
+
+[ ] 1. Acessei meu cPanel
+    URL: _________________________________
+
+[ ] 2. Abri o "Gerenciador de Arquivos" (File Manager)
+
+[ ] 3. Entrei na pasta "public_html"
+
+[ ] 4. Cliquei em "Upload" ou "Carregar"
+
+[ ] 5. Fiz upload destes 3 arquivos:
+    [ ] index-cpanel.html
+    [ ] styles.css
+    [ ] script.js
+
+[ ] 6. RENOMEEI o arquivo:
+    index-cpanel.html → index.html
+
+
+═══════════════════════════════════════════════════════════════════
+🧪 FASE 3: TESTES
+═══════════════════════════════════════════════════════════════════
+
+TESTE NO DESKTOP:
+[ ] 1. Página carrega sem erros
+[ ] 2. Cores e design aparecem corretamente
+[ ] 3. Menu de navegação funciona
+[ ] 4. Scroll suave entre seções funciona
+[ ] 5. FAQ abre e fecha corretamente
+[ ] 6. Botão WhatsApp funciona e abre com mensagem
+[ ] 7. Botão Telefone funciona (abre discador)
+[ ] 8. Links do portfólio abrem em nova aba
+[ ] 9. Hover effects funcionam nos botões
+[ ] 10. Footer tem todas as informações
+
+TESTE NO MOBILE:
+[ ] 11. Página carrega no celular
+[ ] 12. Menu hamburger abre e fecha
+[ ] 13. Botões são grandes e fáceis de clicar
+[ ] 14. WhatsApp abre o app (não o navegador)
+[ ] 15. Design está bonito e organizado
+[ ] 16. Textos são legíveis
+[ ] 17. Scroll funciona suavemente
+
+TESTE NO TABLET:
+[ ] 18. Layout intermediário funciona
+[ ] 19. Grids em 2 colunas aparecem bem
+
+
+═══════════════════════════════════════════════════════════════════
+🔍 FASE 4: VERIFICAÇÃO FINAL
+═══════════════════════════════════════════════════════════════════
+
+[ ] 1. Meu número de WhatsApp está correto
+[ ] 2. Meu número de telefone está correto
+[ ] 3. Meu email está correto
+[ ] 4. Meu endereço está correto
+[ ] 5. Nome da marca está correto (se alterado)
+[ ] 6. Testei em Chrome
+[ ] 7. Testei em celular (iOS ou Android)
+[ ] 8. Compartilhei link com alguém para testar
+[ ] 9. Link está funcionando: www.___________________
+
+
+═══════════════════════════════════════════════════════════════════
+🚀 FASE 5: PRÓXIMOS PASSOS (OPCIONAL)
+═══════════════════════════════════════════════════════════════════
+
+CONFIGURAÇÕES RECOMENDADAS:
+[ ] 1. Ativei SSL/HTTPS no cPanel
+[ ] 2. Configurei Google Analytics
+[ ] 3. Cadastrei no Google Search Console
+[ ] 4. Configurei Google My Business
+[ ] 5. Adicionei favicon personalizado
+
+MELHORIAS FUTURAS:
+[ ] 6. Adicionei screenshots reais dos clientes
+[ ] 7. Adicionei mais depoimentos
+[ ] 8. Configurei pixel do Facebook
+[ ] 9. Configurei Google Ads Conversion Tracking
+[ ] 10. Criei página de obrigado (thank you page)
+
+
+═══════════════════════════════════════════════════════════════════
+📊 MÉTRICAS PARA ACOMPANHAR
+═══════════════════════════════════════════════════════════════════
+
+Após o site entrar no ar, monitore:
+
+[ ] Número de visitantes por dia
+[ ] Cliques no botão WhatsApp
+[ ] Cliques no botão Telefone
+[ ] Taxa de conversão (visitas → contatos)
+[ ] Origem do tráfego (Google Ads, orgânico, etc)
+
+
+═══════════════════════════════════════════════════════════════════
+🎯 OBJETIVOS DA LANDING PAGE
+═══════════════════════════════════════════════════════════════════
+
+Meta mensal:
+• +28 novos agendamentos
+• ROI de 4.8x
+• Custo por agendamento: R$ 15
+• Taxa de resposta WhatsApp: 92%
+
+
+═══════════════════════════════════════════════════════════════════
+📞 SUPORTE
+═══════════════════════════════════════════════════════════════════
+
+Problemas?
+1. Leia o arquivo "GUIA-CPANEL.md"
+2. Verifique a seção "Problemas Comuns e Soluções"
+3. Entre em contato com suporte da sua hospedagem
+
+
+═══════════════════════════════════════════════════════════════════
+✅ CONCLUSÃO
+═══════════════════════════════════════════════════════════════════
+
+Quando todos os itens acima estiverem marcados, sua landing page
+estará 100% funcional e pronta para gerar leads!
+
+Data de conclusão: ____/____/______
+
+Assinatura: _______________________
+
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 PARABÉNS! SUA LANDING PAGE ESTÁ NO AR! 🎉
+
+Agora é hora de:
+• Divulgar o link
+• Iniciar campanhas Google Ads
+• Capturar leads
+• Fechar negócios
+• Aumentar seus agendamentos!
+
+BOA SORTE! 🚀🐾
+
+═══════════════════════════════════════════════════════════════════

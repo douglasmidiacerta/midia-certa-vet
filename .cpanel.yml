@@ -1,0 +1,18 @@
+---
+deployment:
+  tasks:
+    # Definir caminho de destino
+    - export DEPLOYPATH=/home/seu-usuario/public_html
+    
+    # Copiar arquivos principais
+    - /bin/cp index-cpanel.html $DEPLOYPATH/index.html
+    - /bin/cp styles.css $DEPLOYPATH/styles.css
+    - /bin/cp script.js $DEPLOYPATH/script.js
+    
+    # Criar arquivo de log
+    - echo "Deploy realizado em $(date)" >> $DEPLOYPATH/deploy.log
+    
+    # Definir permissões corretas
+    - /bin/chmod 644 $DEPLOYPATH/index.html
+    - /bin/chmod 644 $DEPLOYPATH/styles.css
+    - /bin/chmod 644 $DEPLOYPATH/script.js

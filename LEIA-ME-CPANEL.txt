@@ -1,0 +1,120 @@
+═══════════════════════════════════════════════════════════════════
+  LANDING PAGE - MAIS AGENDAMENTOS PARA CLÍNICAS VETERINÁRIAS
+  Versão HTML Pura para cPanel
+═══════════════════════════════════════════════════════════════════
+
+📦 ARQUIVOS INCLUÍDOS:
+
+✅ index-cpanel.html  →  Arquivo HTML principal (RENOMEAR para index.html)
+✅ styles.css         →  Estilos CSS
+✅ script.js          →  JavaScript (menu mobile, FAQ, animações)
+✅ GUIA-CPANEL.md     →  Guia detalhado de upload
+
+
+═══════════════════════════════════════════════════════════════════
+🚀 COMO USAR (RESUMO RÁPIDO):
+═══════════════════════════════════════════════════════════════════
+
+1️⃣ PERSONALIZE SEUS DADOS
+
+   Abra o arquivo "index-cpanel.html" em um editor de texto e substitua:
+   
+   📱 WhatsApp/Telefone (linha ~470):
+      Encontre: 5531999999999
+      Substitua por: Seu número (formato: 55 + DDD + número)
+   
+   📧 Email (linha ~531):
+      Encontre: contato@midiacertavet.com.br
+      Substitua por: seu@email.com.br
+
+
+2️⃣ FAÇA UPLOAD NO CPANEL
+
+   a) Acesse seu cPanel
+   b) Abra "Gerenciador de Arquivos" ou "File Manager"
+   c) Entre na pasta "public_html"
+   d) Clique em "Upload" ou "Carregar"
+   e) Envie os 3 arquivos:
+      - index-cpanel.html
+      - styles.css
+      - script.js
+
+
+3️⃣ RENOMEIE O ARQUIVO
+
+   ⚠️ IMPORTANTE:
+   No File Manager, clique com botão direito em "index-cpanel.html"
+   e renomeie para: index.html (sem o "-cpanel")
+
+
+4️⃣ TESTE NO NAVEGADOR
+
+   Abra: www.seudominio.com.br
+   A landing page deve aparecer funcionando! 🎉
+
+
+═══════════════════════════════════════════════════════════════════
+✅ ESTRUTURA FINAL NO SERVIDOR:
+═══════════════════════════════════════════════════════════════════
+
+public_html/
+├── index.html    ← (arquivo principal renomeado)
+├── styles.css    ← (estilos)
+└── script.js     ← (interatividade)
+
+
+═══════════════════════════════════════════════════════════════════
+🎨 CARACTERÍSTICAS DA LANDING PAGE:
+═══════════════════════════════════════════════════════════════════
+
+✅ 11 seções completas (Header, Hero, Problemas, Solução, etc)
+✅ Design responsivo (mobile, tablet, desktop)
+✅ Menu mobile com hamburger
+✅ Smooth scroll entre seções
+✅ FAQ com acordeão interativo
+✅ Botões de WhatsApp e telefone funcionais
+✅ 7 clientes do portfólio com links reais
+✅ Gradientes e animações suaves
+✅ Otimizado para conversão
+✅ SEO otimizado
+
+
+═══════════════════════════════════════════════════════════════════
+📝 CHECKLIST ANTES DO UPLOAD:
+═══════════════════════════════════════════════════════════════════
+
+[ ] Alterei o número do WhatsApp
+[ ] Alterei o número do telefone
+[ ] Alterei o email no footer
+[ ] Alterei o endereço no footer
+[ ] Revisei o nome da marca (se necessário)
+[ ] Testei os arquivos localmente
+
+
+═══════════════════════════════════════════════════════════════════
+🆘 PRECISA DE AJUDA?
+═══════════════════════════════════════════════════════════════════
+
+Leia o arquivo "GUIA-CPANEL.md" para instruções detalhadas com
+prints e soluções de problemas comuns.
+
+
+═══════════════════════════════════════════════════════════════════
+🎯 PRÓXIMOS PASSOS APÓS PUBLICAR:
+═══════════════════════════════════════════════════════════════════
+
+1. Configure Google Analytics (opcional)
+2. Ative SSL/HTTPS no cPanel
+3. Teste em diferentes dispositivos (mobile, tablet, desktop)
+4. Compartilhe o link e comece a capturar leads!
+
+
+═══════════════════════════════════════════════════════════════════
+
+Desenvolvido para: Clínicas Veterinárias
+Objetivo: Gerar +28 agendamentos por mês
+ROI Esperado: 4.8x
+
+🚀 Boa sorte com suas campanhas! 🚀
+
+═══════════════════════════════════════════════════════════════════

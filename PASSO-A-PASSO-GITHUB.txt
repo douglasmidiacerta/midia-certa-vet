@@ -1,0 +1,417 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   📤 PASSO A PASSO: ENVIAR PARA GITHUB E CONFIGURAR DEPLOY       ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+✅ STATUS ATUAL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Git inicializado localmente
+✅ Primeiro commit realizado (35 arquivos)
+✅ Todos os arquivos prontos para envio
+✅ Deploy automático configurado (GitHub Actions)
+
+AGORA VOCÊ PRECISA: Enviar para o GitHub e configurar deploy!
+
+
+═══════════════════════════════════════════════════════════════════
+📋 PARTE 1: CRIAR REPOSITÓRIO NO GITHUB (5 MINUTOS)
+═══════════════════════════════════════════════════════════════════
+
+PASSO 1: Acessar GitHub
+─────────────────────────
+1. Abra seu navegador
+2. Acesse: https://github.com
+3. Faça login (ou crie uma conta gratuita se não tiver)
+
+
+PASSO 2: Criar Novo Repositório
+─────────────────────────────────
+1. Clique no botão "+" no canto superior direito
+2. Selecione "New repository"
+
+3. Preencha os dados:
+   ┌────────────────────────────────────────────────────┐
+   │ Repository name: landing-page-vet                  │
+   │                  (ou outro nome que preferir)      │
+   ├────────────────────────────────────────────────────┤
+   │ Description: Landing Page - Mais Agendamentos      │
+   │              para Clínicas Veterinárias            │
+   ├────────────────────────────────────────────────────┤
+   │ Visibility: ● Private (recomendado - só você vê)  │
+   │             ○ Public (qualquer um pode ver)        │
+   ├────────────────────────────────────────────────────┤
+   │ ❌ NÃO marque "Add a README file"                  │
+   │ ❌ NÃO marque "Add .gitignore"                     │
+   │ ❌ NÃO marque "Choose a license"                   │
+   └────────────────────────────────────────────────────┘
+
+4. Clique em "Create repository"
+
+
+PASSO 3: Copiar URL do Repositório
+────────────────────────────────────
+Após criar, você verá uma página com comandos.
+
+COPIE a URL que aparece, algo como:
+https://github.com/SEU-USUARIO/landing-page-vet.git
+
+Anote aqui: _________________________________________________
+
+
+═══════════════════════════════════════════════════════════════════
+📤 PARTE 2: ENVIAR CÓDIGO PARA O GITHUB (2 MINUTOS)
+═══════════════════════════════════════════════════════════════════
+
+Abra o PowerShell/Terminal na pasta do projeto e execute:
+
+COMANDO 1: Conectar ao GitHub
+─────────────────────────────
+git remote add origin https://github.com/SEU-USUARIO/landing-page-vet.git
+
+⚠️ IMPORTANTE: Substitua "SEU-USUARIO" pelo seu usuário do GitHub!
+
+
+COMANDO 2: Renomear branch para main
+─────────────────────────────────────
+git branch -M main
+
+
+COMANDO 3: Enviar para o GitHub
+────────────────────────────────
+git push -u origin main
+
+
+═══════════════════════════════════════════════════════════════════
+🔐 PARTE 3: AUTENTICAÇÃO DO GITHUB (PRIMEIRA VEZ)
+═══════════════════════════════════════════════════════════════════
+
+Na primeira vez que fizer push, o GitHub vai pedir autenticação:
+
+OPÇÃO A: Personal Access Token (Recomendado)
+──────────────────────────────────────────────
+
+1. Vá para: https://github.com/settings/tokens
+   Ou: GitHub → Settings → Developer settings → 
+       Personal access tokens → Tokens (classic)
+
+2. Clique em "Generate new token (classic)"
+
+3. Preencha:
+   - Note: "Landing Page Deploy"
+   - Expiration: 90 days (ou No expiration)
+   - Marque: ☑ repo (Full control of private repositories)
+
+4. Clique em "Generate token"
+
+5. COPIE O TOKEN AGORA! (não vai aparecer novamente)
+   Anote em local seguro: _________________________________
+
+6. Quando o Git pedir senha, cole o token (não a senha da conta)
+
+
+OPÇÃO B: GitHub CLI (Mais Fácil)
+──────────────────────────────────
+
+Se quiser uma forma mais simples:
+
+1. Instalar GitHub CLI:
+   winget install GitHub.cli
+
+2. Autenticar:
+   gh auth login
+
+3. Seguir as instruções na tela
+
+
+═══════════════════════════════════════════════════════════════════
+🚀 PARTE 4: CONFIGURAR DEPLOY AUTOMÁTICO (3 MINUTOS)
+═══════════════════════════════════════════════════════════════════
+
+Agora vamos configurar para que cada vez que você fizer "git push",
+o site seja atualizado automaticamente no cPanel!
+
+
+PASSO 1: Obter Credenciais FTP do cPanel
+──────────────────────────────────────────
+
+1. Acesse seu cPanel
+2. Procure por "Contas FTP" ou "FTP Accounts"
+3. Anote seus dados:
+
+   Servidor FTP: _____________________________ (ex: ftp.seudominio.com.br)
+   Usuário FTP: ______________________________ (ex: usuario@seudominio.com.br)
+   Senha FTP:   ______________________________ (sua senha)
+
+
+PASSO 2: Adicionar Secrets no GitHub
+──────────────────────────────────────
+
+1. Vá para seu repositório no GitHub
+
+2. Clique em "Settings" (⚙️ no topo)
+
+3. No menu lateral esquerdo:
+   Secrets and variables → Actions
+
+4. Clique em "New repository secret"
+
+5. Adicione 3 secrets:
+
+   SECRET 1:
+   ┌────────────────────────────────────┐
+   │ Name:  FTP_SERVER                  │
+   │ Value: ftp.seudominio.com.br       │
+   └────────────────────────────────────┘
+   Clique em "Add secret"
+
+   SECRET 2:
+   ┌────────────────────────────────────┐
+   │ Name:  FTP_USERNAME                │
+   │ Value: usuario@seudominio.com.br   │
+   └────────────────────────────────────┘
+   Clique em "Add secret"
+
+   SECRET 3:
+   ┌────────────────────────────────────┐
+   │ Name:  FTP_PASSWORD                │
+   │ Value: sua_senha_ftp               │
+   └────────────────────────────────────┘
+   Clique em "Add secret"
+
+
+PASSO 3: Testar Deploy Automático
+───────────────────────────────────
+
+1. Volte para a página inicial do repositório
+
+2. Clique na aba "Actions" (no topo)
+
+3. Você verá um workflow "Deploy para cPanel via FTP"
+
+4. Clique nele para ver o status:
+   - 🟢 Verde com ✓ = Deploy funcionou!
+   - 🔴 Vermelho com ✗ = Erro (clique para ver detalhes)
+   - 🟡 Amarelo animado = Processando...
+
+5. Aguarde ~30 segundos até ficar verde ✓
+
+
+PASSO 4: Verificar no Site
+────────────────────────────
+
+1. Abra seu navegador
+2. Acesse: www.seudominio.com.br
+3. A landing page deve estar funcionando! 🎉
+
+
+═══════════════════════════════════════════════════════════════════
+✅ PARTE 5: PERSONALIZAR DADOS (ANTES DE USAR)
+═══════════════════════════════════════════════════════════════════
+
+IMPORTANTE: Personalize seus dados antes de publicar!
+
+1. Abra o arquivo "index-cpanel.html" em um editor
+
+2. Substitua:
+
+   LINHA ~470: Número do WhatsApp
+   ────────────────────────────────
+   Encontre: 5531999999999
+   Substitua por: ___________________________
+   Formato: 55 + DDD + número (sem espaços)
+
+   LINHA ~472: Número do Telefone
+   ────────────────────────────────
+   Encontre: 5531999999999
+   Substitua por: ___________________________
+
+   LINHA ~531: Email
+   ────────────────────────────────
+   Encontre: contato@midiacertavet.com.br
+   Substitua por: ___________________________
+
+   LINHA ~532: Endereço
+   ────────────────────────────────
+   Encontre: Belo Horizonte, MG
+   Substitua por: ___________________________
+
+3. Salve o arquivo
+
+4. Envie para o GitHub:
+   git add .
+   git commit -m "Atualizar dados de contato"
+   git push
+
+5. Aguarde ~30 segundos e o site atualiza automaticamente!
+
+
+═══════════════════════════════════════════════════════════════════
+🔄 PARTE 6: USO DIÁRIO (A PARTIR DE AGORA)
+═══════════════════════════════════════════════════════════════════
+
+Sempre que quiser fazer alterações:
+
+1. Edite os arquivos localmente (Rovo, VS Code, etc)
+
+2. Execute no terminal:
+   ┌────────────────────────────────────┐
+   │ git add .                          │
+   │ git commit -m "descrição mudança"  │
+   │ git push                           │
+   └────────────────────────────────────┘
+
+3. Aguarde ~30 segundos
+
+4. Site atualizado automaticamente! 🎉
+
+
+EXEMPLOS DE ALTERAÇÕES COMUNS:
+─────────────────────────────────
+
+Mudar cor do botão:
+  → Edite styles.css (linha ~16-23)
+  → git add . && git commit -m "Mudar cor do botão" && git push
+
+Alterar texto do hero:
+  → Edite index-cpanel.html (linha ~67)
+  → git add . && git commit -m "Atualizar headline" && git push
+
+Adicionar nova seção:
+  → Edite index-cpanel.html e styles.css
+  → git add . && git commit -m "Adicionar seção depoimentos" && git push
+
+
+═══════════════════════════════════════════════════════════════════
+📊 FLUXO VISUAL DO PROCESSO
+═══════════════════════════════════════════════════════════════════
+
+   ┌──────────────┐
+   │  SEU PC      │  1. Editar arquivos localmente
+   │  (Rovo/Code) │
+   └──────┬───────┘
+          │ git push
+          ↓
+   ┌──────────────┐
+   │  GITHUB      │  2. GitHub recebe código
+   │  (Repositório)│
+   └──────┬───────┘
+          │ GitHub Actions
+          ↓
+   ┌──────────────┐
+   │  DEPLOY FTP  │  3. Deploy automático via FTP
+   │  (Actions)   │
+   └──────┬───────┘
+          │ Upload
+          ↓
+   ┌──────────────┐
+   │  CPANEL      │  4. Servidor recebe arquivos
+   │  (Servidor)  │
+   └──────┬───────┘
+          │
+          ↓
+   ┌──────────────┐
+   │  SITE ONLINE │  5. Site atualizado! 🎉
+   │  (www.seu)   │
+   └──────────────┘
+
+   Tempo total: ~30 segundos
+
+
+═══════════════════════════════════════════════════════════════════
+🆘 PROBLEMAS COMUNS E SOLUÇÕES
+═══════════════════════════════════════════════════════════════════
+
+PROBLEMA 1: "Permission denied" ao fazer push
+──────────────────────────────────────────────
+Solução: Usar Personal Access Token em vez de senha
+(Ver Parte 3 - Autenticação)
+
+
+PROBLEMA 2: Deploy falha (Actions fica vermelho)
+──────────────────────────────────────────────────
+Solução: 
+1. GitHub → Actions → Clique no workflow com erro
+2. Veja a mensagem de erro
+3. Geralmente é credencial FTP errada
+4. Verifique os Secrets (FTP_SERVER, FTP_USERNAME, FTP_PASSWORD)
+
+
+PROBLEMA 3: Site não atualiza após push
+─────────────────────────────────────────
+Solução:
+1. Verifique se Actions rodou (GitHub → Actions)
+2. Limpe cache do navegador (Ctrl + F5)
+3. Verifique permissões dos arquivos no cPanel (644)
+
+
+PROBLEMA 4: "Remote origin already exists"
+────────────────────────────────────────────
+Solução:
+git remote remove origin
+git remote add origin https://github.com/SEU-USUARIO/landing-page-vet.git
+
+
+═══════════════════════════════════════════════════════════════════
+✅ CHECKLIST FINAL
+═══════════════════════════════════════════════════════════════════
+
+GITHUB:
+[ ] Conta criada no GitHub
+[ ] Repositório criado
+[ ] Código enviado (git push)
+[ ] Secrets configurados (FTP_SERVER, FTP_USERNAME, FTP_PASSWORD)
+
+DEPLOY:
+[ ] GitHub Actions rodou com sucesso (verde ✓)
+[ ] Site acessível online
+[ ] Testei fazer uma alteração e vi atualizar
+
+PERSONALIZAÇÃO:
+[ ] Número WhatsApp atualizado
+[ ] Número telefone atualizado
+[ ] Email atualizado
+[ ] Endereço atualizado
+
+TESTES:
+[ ] Menu mobile funciona
+[ ] FAQ abre e fecha
+[ ] Botões WhatsApp/Telefone funcionam
+[ ] Links do portfólio funcionam
+[ ] Design está correto em mobile/desktop
+
+
+═══════════════════════════════════════════════════════════════════
+📚 DOCUMENTAÇÃO COMPLETA
+═══════════════════════════════════════════════════════════════════
+
+Para mais detalhes, leia:
+
+📘 WORKFLOW-RAPIDO.md          → Uso diário resumido
+📘 GUIA-GITHUB-CPANEL.md       → Guia completo detalhado
+📘 SCRIPTS-DEPLOY.md           → Scripts e alternativas
+📘 README.md                   → Visão geral do projeto
+
+
+═══════════════════════════════════════════════════════════════════
+🎉 SUCESSO!
+═══════════════════════════════════════════════════════════════════
+
+Quando todos os checkboxes acima estiverem marcados, você terá:
+
+✅ Landing page online e funcionando
+✅ Deploy automático configurado
+✅ Workflow profissional de desenvolvimento
+✅ Backup automático no GitHub
+✅ Sincronização em 30 segundos
+
+TEMPO TOTAL DE CONFIGURAÇÃO: ~10-15 minutos
+TEMPO PARA FAZER ALTERAÇÕES: ~30 segundos
+
+Qualquer alteração que fizer localmente será automaticamente
+publicada no site após fazer "git push"!
+
+🚀 BOM TRABALHO! 🚀
+
+═══════════════════════════════════════════════════════════════════

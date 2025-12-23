@@ -1,0 +1,90 @@
+═══════════════════════════════════════════════════════════════════
+  COMANDOS PARA CONECTAR AO GITHUB E FAZER PRIMEIRO PUSH
+═══════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: Substitua "SEU-USUARIO" pelo seu nome de usuário do GitHub!
+
+═══════════════════════════════════════════════════════════════════
+PASSO 2: CONECTAR REPOSITÓRIO LOCAL AO GITHUB
+═══════════════════════════════════════════════════════════════════
+
+Execute estes comandos no PowerShell (na pasta do projeto):
+
+1️⃣ Conectar ao GitHub:
+─────────────────────────
+git remote add origin https://github.com/SEU-USUARIO/landing-page-vet.git
+
+Substitua SEU-USUARIO pelo seu usuário real!
+Exemplo: https://github.com/joaosilva/landing-page-vet.git
+
+
+2️⃣ Renomear branch para main:
+─────────────────────────────
+git branch -M main
+
+
+3️⃣ Enviar código para o GitHub:
+─────────────────────────────────
+git push -u origin main
+
+
+═══════════════════════════════════════════════════════════════════
+AUTENTICAÇÃO (Primeira vez)
+═══════════════════════════════════════════════════════════════════
+
+Quando executar "git push", o GitHub vai pedir:
+
+Username: [seu email ou nome de usuário]
+Password: [USE UM TOKEN, NÃO A SENHA DA CONTA]
+
+
+COMO CRIAR TOKEN:
+─────────────────
+1. Acesse: https://github.com/settings/tokens
+2. Clique em "Generate new token (classic)"
+3. Nome: "Landing Page Deploy"
+4. Marque: ☑ repo (Full control of private repositories)
+5. Clique em "Generate token"
+6. COPIE O TOKEN (não vai aparecer novamente!)
+7. Cole como senha quando o Git pedir
+
+
+═══════════════════════════════════════════════════════════════════
+EXEMPLO DE EXECUÇÃO:
+═══════════════════════════════════════════════════════════════════
+
+PS C:\...\Midia-Certa-Vet> git remote add origin https://github.com/joaosilva/landing-page-vet.git
+PS C:\...\Midia-Certa-Vet> git branch -M main
+PS C:\...\Midia-Certa-Vet> git push -u origin main
+
+Username: joaosilva (ou seu email)
+Password: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxx (seu token)
+
+Enumerating objects: 38, done.
+Counting objects: 100% (38/38), done.
+Writing objects: 100% (38/38), done.
+To https://github.com/joaosilva/landing-page-vet.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+✅ SUCESSO!
+
+
+═══════════════════════════════════════════════════════════════════
+SE DER ERRO "remote origin already exists":
+═══════════════════════════════════════════════════════════════════
+
+git remote remove origin
+git remote add origin https://github.com/SEU-USUARIO/landing-page-vet.git
+git push -u origin main
+
+
+═══════════════════════════════════════════════════════════════════
+DEPOIS DO PUSH BEM-SUCEDIDO:
+═══════════════════════════════════════════════════════════════════
+
+1. Acesse seu repositório no navegador
+2. Você verá todos os arquivos lá!
+3. Próximo passo: Configurar Secrets (FTP)
+
+═══════════════════════════════════════════════════════════════════

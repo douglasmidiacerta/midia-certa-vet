@@ -1,0 +1,43 @@
+name: Deploy para cPanel via FTP
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 🚀 Checkout código
+      uses: actions/checkout@v3
+    
+    - name: 📦 Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/src/**
+          **/.vscode/**
+          **/package*.json
+          **/vite.config.js
+          **/tailwind.config.js
+          **/postcss.config.js
+          **/README.md
+          **/GUIA-*.md
+          **/CHECKLIST-*.txt
+          **/LEIA-ME-*.txt
+          **/RESUMO-*.md
+          **/Criar.txt
+          **/.github/**
+    
+    - name: ✅ Deploy completo
+      run: echo "Deploy realizado com sucesso!"

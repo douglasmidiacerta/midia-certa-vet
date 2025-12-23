@@ -1,0 +1,1085 @@
+﻿LANDING PAGE PARA CLÍNICA VETERINÁRIA - ESPECIFICAÇÕES PARA LOVABLE
+
+
+🚀 VISAO GERAL DO PROJETO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Nome do projeto: Landing Page - Mais Agendamentos para Clínicas Veterinárias
+Objetivo: Capturar contatos de dolos de clínicas vet e agendar uma consulta/demonstração
+Tipo: Landing page de conversão (single page)
+Framework recomendado: React + Tailwind CSS (ou sua preferência)
+Responsividade: Mobile-first (mobile, tablet, desktop)
+Performance: Otimizada para Google (LCP, CLS, FID)
+
+
+
+
+🎯 CORES E BRANDING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Cor Primária: #667eea (Roxo/Azul - main)
+Cor Secundária: #764ba2 (Roxo escuro - accent)
+Cor de Destaque/CTA: #ff6b6b (Vermelho forte - call-to-action)
+Cor de Sucesso: #51cf66 (Verde - para números positivos)
+Cor Neutra: #f8f9ff (Cinza claro - backgrounds)
+Texto Principal: #333333 (Cinza escuro)
+Texto Secundario: #666666 (Cinza médio)
+
+
+Fonte: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto (sistema)
+
+
+
+
+📄 SEÇÕES DA PÁGINA (ordem exata)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+=== SEÇÃO 1: HEADER/NAVBAR ===
+
+
+Layout: Sticky no topo
+Altura: 70px
+Background: Branco com borda-inferior leve
+Display: Flex, space-between, center
+
+
+Esquerda:
+- Logo/Brand text: "MÃ Agendamentos" (ou seu nome)
+  Fonte-size: 20px, font-weight: bold, color: #667eea
+
+
+Direita:
+Menu de navegação (hidden em mobile < 768px):
+  - "Início" (link para #hero)
+  - "Como Funciona" (link para #funciona)
+  - "Clínicas" (link para #portfolio)
+  - "Contato" (link para #contato)
+  Font-size: 14px, color: #333
+  Hover: color #667eea, underline
+
+
+Mobile Menu (hamburger em mobile):
+  - 3 linhas (hamburger icon)
+  - Clique abre menu overlay
+  - Itens do menu verticais
+  - Padding: 16px
+
+
+
+
+=== SEÇÃO 2: HERO ===
+
+
+ID: hero
+Background: Gradiente linear 135deg de #667eea até #764ba2
+Padding: 80px 20px (desktop), 60px 20px (mobile)
+Min-height: 600px
+Display: Flex, flex-direction: column, center, justify-center
+Text-align: center
+
+
+Conteudo (ordem de cima pra baixo):
+
+
+1. Badge/Destaque (Opcional)
+   Text: "✨ Este é um site real • Tudo funciona de verdade"
+   Estilo: 
+     - Background: rgba(255,255,255,0.15)
+     - Border-radius: 20px
+     - Padding: 10px 20px
+     - Color: white
+     - Font-size: 13px
+     - Margin-bottom: 20px
+     - Display: inline-block
+
+
+2. Headline Principal
+   Text: "Mais Agendamentos Para Sua Clínica Veterinária"
+   Estilo:
+     - Color: white
+     - Font-size: 48px (desktop), 32px (tablet), 24px (mobile)
+     - Font-weight: 700
+     - Line-height: 1.2
+     - Margin-bottom: 20px
+     - Max-width: 600px
+     - Margin-left: auto
+     - Margin-right: auto
+
+
+3. Subheadline
+   Text: "Site profissional + Google Ads focado em gerar ligações e mensagens WhatsApp TODOS OS DIAS"
+   Estilo:
+     - Color: rgba(255,255,255,0.95)
+     - Font-size: 18px (desktop), 16px (mobile)
+     - Margin-bottom: 30px
+     - Max-width: 600px
+     - Margin-left: auto
+     - Margin-right: auto
+
+
+4. Destaque de Números (Highlight Box)
+   Background: rgba(255,255,255,0.1)
+   Border-radius: 12px
+   Padding: 20px
+   Margin-bottom: 30px
+   Display: Grid / Flex (mobile: 1 coluna, desktop: 3 colunas)
+   Gap: 20px
+   
+   Item 1: "+28" (grande, bold) | "Agendamentos/mês" (pequeno)
+   Item 2: "4.8x" (grande, bold) | "Retorno do Investimento" (pequeno)
+   Item 3: "R$ 15" (grande, bold) | "Custo por Agendamento" (pequeno)
+   
+   Cor: white
+
+
+5. Botão CTA (Call-to-Action)
+   Text: "QUERO VER COMO FUNCIONA"
+   Estilo:
+     - Background: #ff6b6b
+     - Color: white
+     - Padding: 16px 40px
+     - Border-radius: 8px
+     - Font-size: 16px
+     - Font-weight: 600
+     - Cursor: pointer
+     - Border: none
+     - Transition: all 0.3s ease
+     - Hover: background #ff5252, transform: translateY(-2px), box-shadow: 0 8px 15px rgba(255,107,107,0.3)
+     - Action: Scroll para #funciona com smooth scroll
+
+
+
+
+=== SEÇÃO 3: PROBLEMAS ===
+
+
+ID: problemas
+Background: white
+Padding: 60px 20px (desktop), 40px 20px (mobile)
+Max-width: 1200px
+Margin: 0 auto
+
+
+Titulo:
+  Text: "Você enfrenta esses problemas?"
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Color: #333
+  Text-align: center
+  Margin-bottom: 40px
+
+
+Grid de Cards:
+  Display: Grid
+  Desktop: 4 colunas
+  Tablet: 2 colunas
+  Mobile: 1 coluna
+  Gap: 30px
+  
+Cada Card:
+  Background: #fff3cd (amarelo/alerta)
+  Border-left: 4px solid #ff6b6b
+  Border-radius: 8px
+  Padding: 25px
+  Box-shadow: 0 2px 8px rgba(0,0,0,0.08)
+  
+  Elementos do Card:
+  - Icon/Emoji: "❌" (texto, font-size: 24px)
+  - Título (h3): Font-size 18px, color: #c92a2a, font-weight: 600, margin-bottom: 10px
+  - Descrição: Font-size 15px, color: #555, line-height: 1.6
+  - Hover: transform: translateY(-5px), box-shadow: 0 8px 20px rgba(0,0,0,0.12)
+
+
+Cards (conteudo):
+  Card 1:
+    Title: "Agenda com Horários Vazios"
+    Description: "Muitas vagas livres, especialmente tarde/noite. Você depende 100% de indicação e acaso."
+  
+  Card 2:
+    Title: "Clientes Não Encontram Você"
+    Description: "Quando pesquisam 'clínica veterinária perto de mim' no Google, seus concorrentes aparecem primeiro."
+  
+  Card 3:
+    Title: "Sem Estratégia Digital Real"
+    Description: "Tem Instagram mas não converte. Investe em rede social sem ROI. Não sabe quanto custa cada cliente."
+  
+  Card 4:
+    Title: "Publicidade Cara e Sem Controle"
+    Description: "Já tentou anunciar e gastou muito. Não viu resultado. Não sabe para onde vai o dinheiro."
+
+
+
+
+=== SEÇÃO 4: SOLUÇÃO ===
+
+
+ID: solucao
+Background: #f8f9ff
+Padding: 60px 20px
+Max-width: 1200px
+Margin: 0 auto
+
+
+Título:
+  Text: "Como a Gente Resolve Isso"
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Color: #333
+  Text-align: center
+  Margin-bottom: 40px
+
+
+Grid de 3 Boxes:
+  Display: Grid
+  Desktop: 3 colunas
+  Tablet: 2 colunas
+  Mobile: 1 coluna
+  Gap: 25px
+
+
+Cada Box:
+  Background: white
+  Border-radius: 8px
+  Padding: 30px
+  Box-shadow: 0 2px 8px rgba(0,0,0,0.08)
+  Text-align: center
+  Transition: transform 0.3s ease
+  Hover: transform: translateY(-5px), box-shadow: 0 8px 20px rgba(0,0,0,0.12)
+  
+  Elementos:
+  - Icon/Emoji (grande): Font-size: 40px, margin-bottom: 15px
+  - Título (h3): Font-size: 18px, color: #667eea, font-weight: 600, margin-bottom: 10px
+  - Descrição (ul): Font-size: 15px, color: #555, line-height: 1.8, list-style: disc, margin-left: 20px
+
+
+Boxes (conteudo):
+  Box 1:
+    Icon: "📱"
+    Title: "Site Para Conversão"
+    Items:
+      - Mobile-first (funciona perfeito no celular)
+      - Otimizado para Google (SEO local)
+      - Botões grandes: Ligação | WhatsApp | Agendamento
+      - Design moderno e profissional
+      - Carrega rápido (instantâneo)
+  
+  Box 2:
+    Icon: "🎯"
+    Title: "Google Ads Estratégico"
+    Items:
+      - Palavras-chave específicas: "clínica vet perto de mim"
+      - Segmentado por serviços (Consulta | Vacinação | Cirurgia | Banho/Tosa)
+      - Primeira página do Google garantido
+      - Atrair clientes certos no momento certo
+      - ROI positivo desde o primeiro mês
+  
+  Box 3:
+    Icon: "📊"
+    Title: "Rastreamento 100% Transparente"
+    Items:
+      - Dashboard com métricas em tempo real
+      - Ve quantas ligações/msgs gera a cada real investido
+      - CPA (custo por agendamento) bem definido
+      - Sabe exatamente o ROI das campanhas
+      - Relatórios mensais claros
+
+
+
+
+=== SEÇÃO 5: RESULTADOS REAIS ===
+
+
+ID: resultados
+Background: white
+Padding: 60px 20px
+Max-width: 1200px
+Margin: 0 auto
+
+
+Título:
+  Text: "Resultados Reais de Clínicas (Casos de Sucesso)"
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Color: #333
+  Text-align: center
+  Margin-bottom: 40px
+
+
+Grid de 4 Destaques:
+  Display: Grid
+  Desktop: 4 colunas
+  Tablet: 2 colunas
+  Mobile: 1 coluna
+  Gap: 25px
+
+
+Cada Destaque:
+  Background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+  Color: white
+  Border-radius: 12px
+  Padding: 30px
+  Text-align: center
+  Box-shadow: 0 4px 12px rgba(0,0,0,0.1)
+  
+  Elementos:
+  - Número Grande: Font-size: 48px, font-weight: 700, margin-bottom: 10px, line-height: 1
+  - Descrição: Font-size: 16px, opacity: 0.95, margin-bottom: 8px
+  - Subtítulo: Font-size: 13px, opacity: 0.85
+
+
+Destaques (conteudo):
+  Item 1:
+    Número: "+28"
+    Descrição: "Novos Agendamentos por Mês"
+    Subtítulo: "Clínica em Vila da Serra, BH"
+  
+  Item 2:
+    Número: "4.8x"
+    Descrição: "Retorno do Investimento (ROI)"
+    Subtítulo: "Média das campanhas"
+  
+  Item 3:
+    Número: "R$ 15"
+    Descrição: "Custo por Agendamento (CPA)"
+    Subtítulo: "Sem desperdízio"
+  
+  Item 4:
+    Número: "92%"
+    Descrição: "Taxa de Resposta WhatsApp"
+    Subtítulo: "Clientes engajados"
+
+
+
+
+=== SEÇÃO 6: COMO FUNCIONA ===
+
+
+ID: funciona
+Background: #f8f9ff
+Padding: 60px 20px
+Max-width: 1200px
+Margin: 0 auto
+
+
+Título:
+  Text: "Como Funciona Na Prática (3 Passos Simples)"
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Color: #333
+  Text-align: center
+  Margin-bottom: 40px
+
+
+Grid de 3 Steps:
+  Display: Grid
+  Desktop: 3 colunas
+  Tablet: 1 coluna  (ou 3 colunas com scroll horizontal)
+  Mobile: 1 coluna
+  Gap: 30px
+  Align-items: stretch
+
+
+Cada Step:
+  Background: white
+  Border-top: 4px solid #667eea
+  Border-radius: 8px
+  Padding: 30px
+  Box-shadow: 0 2px 8px rgba(0,0,0,0.08)
+  Text-align: center
+  Position: relative (para mostrar seta entre elas)
+  
+  Elementos:
+  - Número (circle): 
+    Background: #667eea
+    Color: white
+    Width: 50px
+    Height: 50px
+    Border-radius: 50%
+    Display: flex + center items
+    Font-size: 24px
+    Font-weight: 700
+    Margin: 0 auto 15px
+  
+  - Título (h3): Font-size: 18px, color: #333, font-weight: 600, margin-bottom: 10px
+  - Descrição: Font-size: 15px, color: #555, line-height: 1.6
+
+
+Steps (conteudo):
+  Step 1:
+    Número: "1"
+    Título: "Alguém Busca no Google"
+    Descrição: "Quando digitam 'clínica veterinária perto de mim' ou 'vet em [sua cidade]'"
+  
+  Step 2:
+    Número: "2"
+    Título: "Seu Site/Anúncio Aparece"
+    Descrição: "Na primeira página do Google, acima dos concorrentes. Com estrelas de avaliação."
+  
+  Step 3:
+    Número: "3"
+    Título: "Ele Liga ou Manda WhatsApp"
+    Descrição: "Cliente entra em contato direto. Você agenda a consulta. Negócio fechado!"
+
+
+Arrows (Setas entre steps - apenas desktop):
+  Display: none em mobile/tablet
+  Display: block em desktop (960px+)
+  Position: absolute
+  Top: 50%
+  Right: -15px
+  Font-size: 24px
+  Color: #667eea
+  Text: "→"
+
+
+
+
+=== SEÇÃO 7: PORTFÓLIO (CLIENTES) ===
+
+
+ID: portfolio
+Background: white
+Padding: 60px 20px
+Max-width: 1200px
+Margin: 0 auto
+
+
+Título:
+  Text: "Veja Clínicas que Já Aumentaram Seus Agendamentos"
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Color: #333
+  Text-align: center
+  Margin-bottom: 10px
+
+
+Subtítulo:
+  Text: "Sites e campanhas que a gente desenvolveu em BH"
+  Font-size: 18px
+  Color: #666
+  Text-align: center
+  Margin-bottom: 40px
+
+
+Grid Principal:
+  Display: Grid
+  Desktop: 3 colunas (6 itens) + 1 linha com 1 item centralizado
+  Tablet: 2 colunas
+  Mobile: 1 coluna
+  Gap: 25px
+
+
+Cada Card de Clínica:
+  Background: white
+  Border-radius: 8px
+  Padding: 20px
+  Box-shadow: 0 2px 8px rgba(0,0,0,0.08)
+  Text-align: center
+  Transition: all 0.3s ease
+  Hover: transform: translateY(-8px), box-shadow: 0 12px 25px rgba(0,0,0,0.12), background: #f9f9f9
+  
+  Elementos:
+  - Imagem/Logo: 
+    Height: 120px
+    Width: 100%
+    Background: #f0f0f0
+    Border-radius: 6px
+    Margin-bottom: 15px
+    Object-fit: cover
+    Nota: Usar screenshots dos sites
+  
+  - Título (h3): Font-size: 16px, color: #333, font-weight: 600, margin-bottom: 8px
+  - URL: Font-size: 13px, color: #667eea, margin-bottom: 10px
+  - Badge/Destaque: 
+    Display: inline-block
+    Background: #f0f0f0
+    Color: #333
+    Padding: 6px 12px
+    Border-radius: 16px
+    Font-size: 12px
+    Margin-bottom: 15px
+  
+  - Botão:
+    Background: transparent
+    Color: #667eea
+    Border: 2px solid #667eea
+    Padding: 10px 20px
+    Border-radius: 6px
+    Font-size: 13px
+    Font-weight: 600
+    Cursor: pointer
+    Transition: all 0.3s ease
+    Hover: background: #667eea, color: white
+    Text: "Ver Site"
+    Link: href = URL da clínica (abre em nova aba)
+
+
+Clientes (conteudo - Ordem exata):
+  Fileira 1 (3 cards):
+    Card 1:
+      Título: "Clínica Veterinária BH"
+      URL: "clinicaveterinariabh.com.br"
+      Badge: "24h | Equipe Treinada"
+      Link: https://clinicaveterinariabh.com.br/
+    
+    Card 2:
+      Título: "Clínica Veterinária BH 24h"
+      URL: "clinicaveterinariabh24h.com.br"
+      Badge: "Atendimento 24/7"
+      Link: https://clinicaveterinariabh24h.com.br/
+    
+    Card 3:
+      Título: "CliniVet Veterinária"
+      URL: "clinivetveterinaria.com.br"
+      Badge: "Serviços Completos"
+      Link: https://clinivetveterinaria.com.br/
+  
+  Fileira 2 (3 cards):
+    Card 4:
+      Título: "CliniVet 24 Horas"
+      URL: "clinivet24horas.com.br"
+      Badge: "Emergências 24h"
+      Link: https://clinivet24horas.com.br/
+    
+    Card 5:
+      Título: "UPA Clínica Veterinária"
+      URL: "upaclinicaveterinaria.com.br"
+      Badge: "Hospital Equipado"
+      Link: https://upaclinicaveterinaria.com.br/
+    
+    Card 6:
+      Título: "UPA Pet 24h"
+      URL: "upapet24h.com.br"
+      Badge: "Cuidado 24/7"
+      Link: https://upapet24h.com.br/
+  
+  Fileira 3 (1 card centralizado - DESTAQUE):
+    Card 7 (Destaque):
+      Background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      Color: white
+      Padding: 30px
+      Max-width: 400px
+      Margin: 0 auto
+      
+      Título: "UPA Veterinária 24h"
+      URL: "upaveterinaria24h.com.br" (color: rgba(255,255,255,0.8))
+      Badge: "🏆 Referência em BH" (background: rgba(255,255,255,0.2), color: white)
+      
+      Botão (Maior):
+        Background: white
+        Color: #667eea
+        Padding: 12px 30px
+        Font-size: 15px
+        Font-weight: 600
+        Hover: background: #f0f0f0
+        Text: "Ver Site"
+        Link: https://upaveterinaria24h.com.br/
+
+
+
+
+=== SEÇÃO 8: PERGUNTAS FREQUENTES (FAQ) ===
+
+
+ID: faq
+Background: white
+Padding: 60px 20px
+Max-width: 1000px
+Margin: 0 auto
+
+
+Título:
+  Text: "Dúvidas Frequentes"
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Color: #333
+  Text-align: center
+  Margin-bottom: 40px
+
+
+Accordião (Componente Interativo):
+  Display: flex
+  Flex-direction: column
+  Gap: 15px
+  Max-width: 800px
+  Margin: 0 auto
+
+
+Cada Item Acordião:
+  Background: white
+  Border: 1px solid #e0e0e0
+  Border-radius: 8px
+  Overflow: hidden
+  
+  Parte 1 - Question (sempre visível):
+    Background: #f8f9ff
+    Padding: 20px
+    Cursor: pointer
+    Display: flex
+    Justify-content: space-between
+    Align-items: center
+    Font-weight: 600
+    Color: #333
+    Font-size: 16px
+    Transition: all 0.3s ease
+    Hover: background: #f0f1ff
+    
+    Ícone: "+ / -" (muda conforme state)
+    Position: absolute right
+    Font-size: 20px
+    Color: #667eea
+  
+  Parte 2 - Answer (hidden até clique):
+    Background: white
+    Padding: 20px
+    Color: #555
+    Font-size: 15px
+    Line-height: 1.8
+    Display: none (ou height: 0, overflow: hidden para animação)
+    Quando ativo (expanded): display: block (ou height: auto)
+    Border-top: 1px solid #e0e0e0
+
+
+FAQ Items (conteudo):
+  Item 1:
+    Question: "Quanto custa?"
+    Answer: "Você investe em Google Ads (recomendado: R$ 800-1.500/mês) e paga uma taxa fixa de gestão. Cada agendamento sai a média de R$ 15. Se ganhar 30 agendamentos/mês, o ROI é de 4-5x."
+  
+  Item 2:
+    Question: "Quanto tempo leva para ver resultado?"
+    Answer: "Primeiros resultados em 7-14 dias. Estabilizando em 30 dias. Para métricas completas e otimização, recomendamos 90 dias de acompanhamento."
+  
+  Item 3:
+    Question: "Vocês gerenciam Google Ads ou só fazem site?"
+    Answer: "A gente faz TUDO: site, Google Ads, acompanhamento mensal, otimização contínua de campanhas, relatórios de ROI. É um serviço completo e integrado."
+  
+  Item 4:
+    Question: "E se não funcionar?"
+    Answer: "Funcionou em +95% dos casos. Se não houver resultado satisfatório em 30 dias, a gente faz revisão estratégica SEM custo extra."
+  
+  Item 5:
+    Question: "Vocalizadores trabalham em [sua cidade]?"
+    Answer: "Sim, trabalhamos em Belo Horizonte e região metropolitana com forte expertise. Outras cidades analisamos caso a caso."
+
+
+
+
+=== SEÇÃO 9: DEPOIMENTOS (OPCIONAL) ===
+
+
+ID: depoimentos
+Background: #f8f9ff
+Padding: 60px 20px
+Max-width: 1000px
+Margin: 0 auto
+
+
+Título:
+  Text: "O Que Nossos Clientes Falam" (ou similar)
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Color: #333
+  Text-align: center
+  Margin-bottom: 40px
+
+
+Grid de Depoimentos:
+  Display: grid
+  Desktop: 2 colunas
+  Tablet: 1 coluna
+  Mobile: 1 coluna
+  Gap: 30px
+
+
+Cada Card de Depoimento:
+  Background: white
+  Border-left: 4px solid #667eea
+  Border-radius: 8px
+  Padding: 25px
+  Box-shadow: 0 2px 8px rgba(0,0,0,0.08)
+  
+  Elementos:
+  - Estrelas: ⭐⭐⭐⭐⭐ (5 estrelas, color: #ffc107, font-size: 18px, margin-bottom: 10px)
+  - Texto: Font-size: 15px, color: #555, line-height: 1.8, margin-bottom: 15px, font-style: italic
+  - Autor: Font-weight: 600, color: #667eea, font-size: 14px
+  - Título/Cargo: Font-size: 12px, color: #999
+
+
+Depoimentos (conteudo - Minimo 2):
+  Depoimento 1:
+    Texto: "Aumentou minha agenda em 40% em apenas 60 dias. Excelente atendimento e resultados reais. Recomendo!"
+    Autor: "Dr. Carlos Silva"
+    Cargo: "Dono da Clínica X"
+  
+  Depoimento 2:
+    Texto: "Finalmente estou vendo exatamente para onde vai cada real do meu investimento em marketing. ROI transparente!"
+    Autor: "Dra. Ana Costa"
+    Cargo: "Dono da Clínica Y"
+
+
+
+
+=== SEÇÃO 10: CALL-TO-ACTION FINAL ===
+
+
+ID: contato
+Background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+Color: white
+Padding: 60px 20px
+Text-align: center
+
+
+Título:
+  Text: "Ótimo! Você está pronto para mais agendamentos?"
+  Font-size: 36px (desktop), 28px (mobile)
+  Font-weight: 700
+  Margin-bottom: 20px
+  Color: white
+
+
+Subtítulo:
+  Text: "Agende uma consultoria gratuita para conhecer sua situação"
+  Font-size: 18px
+  Color: rgba(255,255,255,0.95)
+  Margin-bottom: 30px
+
+
+BotoesDiv (Flex, gap: 15px, justify-center, flex-wrap: wrap):
+  Botão 1 (WhatsApp):
+    Background: white
+    Color: #667eea
+    Padding: 16px 32px
+    Border-radius: 8px
+    Font-size: 16px
+    Font-weight: 600
+    Border: none
+    Cursor: pointer
+    Transition: all 0.3s ease
+    Hover: background: #f0f0f0, transform: translateY(-2px)
+    Icon: 💬
+    Text: "Conversar no WhatsApp"
+    Link/Action: Abre WhatsApp Web com mensagem pré-definida
+    Numero: +55 31 XXXXX-XXXX (seu número)
+    Mensagem: "Olá! Gostaria de saber mais sobre como aumentar agendamentos da minha clínica."
+  
+  Botão 2 (Telefone):
+    Background: transparent
+    Color: white
+    Padding: 16px 32px
+    Border: 2px solid white
+    Border-radius: 8px
+    Font-size: 16px
+    Font-weight: 600
+    Cursor: pointer
+    Transition: all 0.3s ease
+    Hover: background: rgba(255,255,255,0.1)
+    Icon: ☎️
+    Text: "Me Ligar Agora"
+    Link/Action: tel:+55319XXXXXX (seu número)
+
+
+Observação Pequena:
+  Font-size: 13px
+  Color: rgba(255,255,255,0.8)
+  Margin-top: 20px
+  Text: "Consultoria gratuita de 15 minutos | Sem compromisso"
+
+
+
+
+=== SEÇÃO 11: RODAPÉ ===
+
+
+Background: #1a1a2e (cinza muito escuro)
+Color: white
+Padding: 40px 20px
+
+
+Layout: 3-4 colunas (desktop), 2 colunas (tablet), 1 coluna (mobile)
+Gap: 40px
+
+
+Coluna 1 - Informações da Empresa:
+  - Logo/Brand
+  - "Solução completa para clínicas veterinárias aumentarem agendamentos."
+  - Social Links (opcional): LinkedIn, Instagram, Facebook icons
+
+
+Coluna 2 - Links Rápidos:
+  H3: "Links"
+  - Início
+  - Como Funciona
+  - Portfólio
+  - Contato
+  Font-size: 14px
+  Hover: color #667eea, underline
+
+
+Coluna 3 - Contato:
+  H3: "Contato"
+  - Tel: +55 31 XXXXX-XXXX
+  - Email: seu@email.com
+  - Local: Belo Horizonte, MG
+  Font-size: 14px
+
+
+Coluna 4 - Legal (opcional):
+  H3: "Legal"
+  - Política de Privacidade
+  - Termos de Uso
+  Font-size: 13px
+  Opacity: 0.8
+
+
+Fundo do Rodapé:
+  Border-top: 1px solid rgba(255,255,255,0.1)
+  Padding-top: 20px
+  Margin-top: 30px
+  Text-align: center
+  Font-size: 12px
+  Opacity: 0.6
+  Text: "© 2025 [Seu Nome/Empresa]. Todos os direitos reservados."
+
+
+
+
+
+
+
+
+🚀 INFORMAÇÕES ADICIONAIS PARA O LOVABLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+SEO E METADATA:
+
+
+Title Tag: "Landing Page - Mais Agendamentos para Clínicas Veterinárias em BH"
+Meta Description: "Site profissional + Google Ads focado em gerar ligações e mensagens WhatsApp para sua clínica veterinária. +28 agendamentos/mês. Resultado garantido."
+Keywords: clínica veterinária bh, mais agendamentos, google ads vet, marketing veterinário, vet em belo horizonte
+
+
+OG Image (para compartilhamento em redes):
+  Dimensions: 1200x630px
+  Conteúdo: Logo + Título principal + Números principais
+
+
+Favicon: 🚸 (emoji veterinario ou logo) ou arquivo .ico de 32x32px
+
+
+
+
+REESPONSIVIDADE:
+
+
+Breakpoints:
+  Mobile: 320px - 767px
+  Tablet: 768px - 1023px
+  Desktop: 1024px+
+
+
+Cuidados:
+  - Logo menor em mobile
+  - Menu hamburger em mobile (< 768px)
+  - Grids se transformam de 3/4 colunas para 1-2 colunas em mobile
+  - Font-sizes reduzem significativamente em mobile
+  - Padding/margin reduzem em mobile para economizar espaço
+  - Imagens responsive com srcset (se usar img tags)
+
+
+
+
+ANIMAÇÕES E INTERATIVIDADES:
+
+
+1. Scroll Suave (Smooth Scroll):
+   - Clique em botões de navegação scrolleia suavemente para a seção
+   - CSS: scroll-behavior: smooth;
+
+
+2. Hover Effects:
+   - Cards elevam com transform: translateY(-5px)
+   - Box-shadows aumentam
+   - Cores mudam sutilmente
+   - Transition: 0.3s ease
+
+
+3. Acordião (FAQ):
+   - Clique em question expande/colapsa answer
+   - Ícone muda de + para -
+   - Animação suave de expansão
+
+
+4. Sticky Header:
+   - Navbar fica fixada no topo quando scroll
+   - Background muda de transparent para white ao scroll
+   - Box-shadow aparece ao scroll
+
+
+5. Load Effects (Opcional):
+   - Fade-in ou slide-in dos elementos conforme entram na viewport
+   - Biblioteca: Intersection Observer API ou Framer Motion
+
+
+
+
+OTIMIZAÇÕES DE PERFORMANCE:
+
+
+1. Imagens:
+   - Comprimir com TinyPNG/Compressor.io
+   - Usar WebP quando possível
+   - Lazy load com native loading="lazy"
+   - Responsivas com srcset
+
+
+2. CSS:
+   - Tailwind CSS recomendado (já otimizado)
+   - Purge unused styles em build
+   - Min-size final: < 50kb
+
+
+3. JavaScript:
+   - Evitar JS desnecessario
+   - Code-splitting em Lovable/React
+   - Lazy load para componentes complexos
+
+
+4. Fonts:
+   - System fonts (evitar imports de Google Fonts se possível)
+   - Máximo 2 font-weights
+
+
+5. Lighthouse Score:
+   - Meta: 90+ em Performance, 95+ em Accessibility
+   - Usar Lighthouse CI para monitorar
+
+
+
+
+FUNCIONALIDADES ESPERADAS:
+
+
+1. Navegação:
+   - Links internos com smooth scroll
+   - Menu ativo indica seção atual
+   - Mobile menu abre/fecha com toggle
+
+
+2. Botões de Ação:
+   - WhatsApp link com número e mensagem pré-definida
+   - Tel: link para discagem direta
+   - "Ver Site" abre em nova aba (target="_blank")
+
+
+3. Formularios (Opcional futuro):
+   - Email/Phone capture para lead generation
+   - Validacao básica
+   - Integração com email service (Mailchimp, Brevo, etc)
+
+
+4. Analytics:
+   - Google Analytics 4 (GA4)
+   - Rastrear: cliques em botões CTA, seções visitadas, tempo na página
+   - Events: button_click, whatsapp_click, phone_click, section_view
+
+
+5. Conversão:
+   - Links de WhatsApp/Teléfone com utm_source=landing
+   - Rastreamento de cliques
+   - Callback forms (futura integraçção)
+
+
+
+
+DATAS VARIAVEIS (SUBSTITUIR):
+
+
+NÓMERO WHATSAPP: +55 31 XXXXX-XXXX
+NÓMERO TEL: +55 31 XXXXX-XXXX
+EMAIL: seu@email.com
+ENDERECO: Belo Horizonte, MG
+BRAND NAME: [Seu Nome/Empresa]
+ANO: 2025
+
+
+Obs: Buscar e substituir (Ctrl+H) no Lovable com seus dados
+
+
+
+
+NOMES DE ARQUIVOS E ESTRUTURA (SE NEEDED):
+
+
+Se montar em Next.js:
+  pages/
+    index.tsx (main page)
+  components/
+    Header.tsx
+    Hero.tsx
+    Problemas.tsx
+    Solucao.tsx
+    Resultados.tsx
+    ComoFunciona.tsx
+    Portfolio.tsx
+    FAQ.tsx
+    Depoimentos.tsx
+    CTA.tsx
+    Footer.tsx
+  styles/
+    globals.css (tailwind)
+  public/
+    images/
+      clinica1.jpg
+      clinica2.jpg
+      ... (screenshots dos sites)
+
+
+
+
+CLIENTES E URLS (REFERENCIAS):
+
+
+1. Clínica Veterinária BH - https://clinicaveterinariabh.com.br/
+2. Clínica Veterinária BH 24h - https://clinicaveterinariabh24h.com.br/
+3. CliniVet Veterinária - https://clinivetveterinaria.com.br/
+4. CliniVet 24 Horas - https://clinivet24horas.com.br/
+5. UPA Clínica Veterinária - https://upaclinicaveterinaria.com.br/
+6. UPA Pet 24h - https://upapet24h.com.br/
+7. UPA Veterinária 24h - https://upaveterinaria24h.com.br/
+
+
+(Obs: Capturar screenshots desses sites para colocar nos cards do portfólio)
+
+
+
+
+📄 CHECKLIST FINAL PARA O LOVABLE:
+
+
+✅ Todas as 11 seções implementadas
+✅ Responsive design funcionando (mobile, tablet, desktop)
+✅ Cores e branding aplicados corretamente
+✅ Acordião (FAQ) funcional
+✅ Botões de CTA com links ativos (WhatsApp, Tel)
+✅ Scroll suave funcionando
+✅ Menu sticky no topo
+✅ Hover effects nos cards
+✅ Imagens otimizadas e lazy-loaded
+✅ SEO metadata correta
+✅ Google Analytics integrado
+✅ Performance score 90+ (Lighthouse)
+✅ Accessibility AA+ (WCAG)
+✅ Testes em mobile, tablet, desktop
+✅ URLs dos clientes atualizadas
+✅ Número WhatsApp/Teléfone corretos
+
+
+
+
+======== PRONTO PARA COMPART ILHAR COM LOVABLE! ========
