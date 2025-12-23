@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 const Portfolio = () => {
   const clients = [
@@ -72,7 +73,7 @@ const Portfolio = () => {
         {/* Grid de Clientes Regulares */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {regularClients.map((client, index) => (
-            <div
+            <Reveal delay={index * 60}
               key={index}
               className="bg-white rounded-lg p-5 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_25px_rgba(0,0,0,0.12)] hover:bg-[#f9f9f9]"
             >
@@ -101,14 +102,14 @@ const Portfolio = () => {
               >
                 Ver Site
               </a>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Cliente Destaque */}
         {highlightClient && (
           <div className="max-w-md mx-auto">
-            <div className="bg-gradient-to-br from-primary to-secondary text-white rounded-lg p-8 shadow-[0_4px_12px_rgba(0,0,0,0.1)] text-center">
+            <Reveal className="bg-gradient-to-br from-primary to-secondary text-white rounded-lg p-8 shadow-[0_4px_12px_rgba(0,0,0,0.1)] text-center">
               {/* Placeholder para Logo/Screenshot */}
               <div className="h-[120px] bg-white/10 rounded-md mb-4 flex items-center justify-center text-white text-3xl font-bold">
                 🐾

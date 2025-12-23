@@ -1,38 +1,40 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 const Solucao = () => {
   const solutions = [
     {
-      icon: '📱',
-      title: 'Site Para Conversão',
+      icon: '🧩',
+      title: 'Criação ou ajuste da página da clínica',
       items: [
-        'Mobile-first (funciona perfeito no celular)',
-        'Otimizado para Google (SEO local)',
-        'Botões grandes: Ligação | WhatsApp | Agendamento',
-        'Design moderno e profissional',
-        'Carrega rápido (instantâneo)',
+        'Desenvolvimento ou otimização de página focada em conversão (ligações e WhatsApp)',
+        'Textos e estrutura para destacar serviços, diferenciais e localização',
+        'Configuração de rastreamento para entender o que está funcionando',
       ],
     },
     {
       icon: '🎯',
-      title: 'Google Ads Estratégico',
+      title: 'Gestão profissional de anúncios (Google e redes)',
       items: [
-        'Palavras-chave específicas: "clínica vet perto de mim"',
-        'Segmentado por serviços (Consulta | Vacinação | Cirurgia | Banho/Tosa)',
-        'Primeira página do Google garantido',
-        'Atrair clientes certos no momento certo',
-        'ROI positivo desde o primeiro mês',
+        'Planejamento e criação de campanhas para sua região e tipos de serviço',
+        'Ajustes constantes de segmentação, palavras-chave e criativos',
+        'Pausa, ampliação ou mudança de foco conforme resultados e necessidade',
       ],
     },
     {
       icon: '📊',
-      title: 'Rastreamento 100% Transparente',
+      title: 'Acompanhamento e comunicação contínua',
       items: [
-        'Dashboard com métricas em tempo real',
-        'Ve quantas ligações/msgs gera a cada real investido',
-        'CPA (custo por agendamento) bem definido',
-        'Sabe exatamente o ROI das campanhas',
-        'Relatórios mensais claros',
+        'Relatórios mensais simples com ligações, mensagens e custo por agendamento',
+        'Reuniões ou áudios periódicos para alinhar melhorias',
+      ],
+    },
+    {
+      icon: '🤝',
+      title: 'Suporte ao atendimento (bônus de serviço)',
+      items: [
+        'Roteiro para WhatsApp focado em transformar contatos em agendamentos',
+        'Orientações pontuais para equipe sobre respostas e horários',
       ],
     },
   ];
@@ -41,14 +43,17 @@ const Solucao = () => {
     <section id="solucao" className="bg-neutral py-12 md:py-16 px-5">
       <div className="max-w-6xl mx-auto">
         {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-bold text-textPrimary text-center mb-10 md:mb-12">
-          Como a Gente Resolve Isso
+        <h2 className="text-3xl md:text-4xl font-bold text-textPrimary text-center mb-3">
+          O Que Fazemos Por Você, Todo Mês
         </h2>
+        <p className="text-lg text-textSecondary text-center mb-10 md:mb-12 max-w-3xl mx-auto">
+          Serviço completo de atração de novos clientes: planejamento, criação, gestão e otimização das ações digitais que trazem pacientes para a sua clínica.
+        </p>
 
         {/* Grid de Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {solutions.map((solution, index) => (
-            <div
+            <Reveal delay={index * 100}
               key={index}
               className="bg-white rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
             >
@@ -64,7 +69,7 @@ const Solucao = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

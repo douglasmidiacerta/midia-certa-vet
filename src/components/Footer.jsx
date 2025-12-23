@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,6 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#1a1a2e] text-white py-10 md:py-12 px-5">
+      <Reveal>
       <div className="max-w-6xl mx-auto">
         {/* Grid Principal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-8">
@@ -116,6 +118,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
+      </Reveal>
     </footer>
   );
 };

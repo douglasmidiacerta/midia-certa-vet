@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Reveal from './Reveal';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -41,7 +42,7 @@ const FAQ = () => {
         {/* Acordeão */}
         <div className="flex flex-col gap-4 max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
-            <div
+            <Reveal delay={index * 80}
               key={index}
               className="bg-white border border-gray-200 rounded-lg overflow-hidden"
             >

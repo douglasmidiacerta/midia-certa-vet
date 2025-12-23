@@ -4,18 +4,23 @@ const ComoFunciona = () => {
   const steps = [
     {
       number: '1',
-      title: 'Alguém Busca no Google',
-      description: 'Quando digitam "clínica veterinária perto de mim" ou "vet em [sua cidade]"',
+      title: 'Conversa inicial gratuita',
+      description: 'Entendemos sua clínica, serviços principais, região e capacidade de atendimento. Sem tecnicês, focado na sua realidade.',
     },
     {
       number: '2',
-      title: 'Seu Site/Anúncio Aparece',
-      description: 'Na primeira página do Google, acima dos concorrentes. Com estrelas de avaliação.',
+      title: 'Proposta de serviço',
+      description: 'Você recebe uma proposta clara de serviço mensal: o que será feito, investimento sugerido em anúncios e acompanhamento.',
     },
     {
       number: '3',
-      title: 'Ele Liga ou Manda WhatsApp',
-      description: 'Cliente entra em contato direto. Você agenda a consulta. Negócio fechado!',
+      title: 'Início dos trabalhos',
+      description: 'Criamos ou ajustamos a página e configuramos as campanhas. Em poucos dias você já começa a aparecer para quem está buscando.',
+    },
+    {
+      number: '4',
+      title: 'Otimização contínua',
+      description: 'Todo mês analisamos os resultados, ajustamos campanhas e alinhamos próximos passos para manter/accelerar o ritmo.',
     },
   ];
 
@@ -24,7 +29,7 @@ const ComoFunciona = () => {
       <div className="max-w-6xl mx-auto">
         {/* Título */}
         <h2 className="text-3xl md:text-4xl font-bold text-textPrimary text-center mb-10 md:mb-12">
-          Como Funciona Na Prática (3 Passos Simples)
+          Como Vamos Trabalhar Juntos
         </h2>
 
         {/* Grid de Steps */}

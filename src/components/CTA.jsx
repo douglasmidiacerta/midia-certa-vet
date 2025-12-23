@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 const CTA = () => {
   // Substitua com seu número real
@@ -7,7 +8,7 @@ const CTA = () => {
 
   return (
     <section id="contato" className="bg-gradient-to-br from-primary to-secondary text-white py-12 md:py-16 px-5 text-center">
-      <div className="max-w-4xl mx-auto">
+      <Reveal className="max-w-4xl mx-auto">
         {/* Título */}
         <h2 className="text-3xl md:text-4xl font-bold mb-5">
           Ótimo! Você está pronto para mais agendamentos?
@@ -45,7 +46,7 @@ const CTA = () => {
         <p className="text-[13px] text-white/80 mt-5">
           Consultoria gratuita de 15 minutos | Sem compromisso
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 };

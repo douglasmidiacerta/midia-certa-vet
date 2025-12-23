@@ -9,6 +9,7 @@ import Portfolio from './components/Portfolio';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       <FAQ />
       <CTA />
       <Footer />
-    </div>
+     <FloatingWhatsApp />
+   </div>
   );
 }
 
