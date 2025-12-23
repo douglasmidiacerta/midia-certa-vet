@@ -44,6 +44,10 @@ tmp_rovodev_*
 cgi-bin/
 .well-known/
 
+# Arquivos gerados pelo deploy do cPanel
+index.html
+deploy.log
+
 # Arquivos de configuração sensíveis
 .env
 .env.local
