@@ -1,10 +1,8 @@
 ---
 deployment:
   tasks:
-    # Renomear index-cpanel.html para index.html
-    - /bin/mv -f index-cpanel.html index.html
-    
-    # Definir permissões corretas
+    # Definir permissões corretas para os arquivos
     - /bin/chmod 644 index.html
     - /bin/chmod 644 styles.css
     - /bin/chmod 644 script.js
+    - /bin/chmod 755 .
