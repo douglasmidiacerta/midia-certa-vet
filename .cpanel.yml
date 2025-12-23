@@ -2,7 +2,7 @@
 deployment:
   tasks:
     # Definir caminho de destino
-    - export DEPLOYPATH=/home2/mc/public_html
+    - export DEPLOYPATH=/home2/mc/public_html/vet
     
     # Copiar arquivos principais
     - /bin/cp index-cpanel.html $DEPLOYPATH/index.html
