@@ -2,10 +2,7 @@
 deployment:
   tasks:
     # Renomear index-cpanel.html para index.html
-    - /bin/cp index-cpanel.html index.html
-    
-    # Criar arquivo de log
-    - echo "Deploy realizado em $(date)" >> deploy.log
+    - /bin/mv -f index-cpanel.html index.html
     
     # Definir permissões corretas
     - /bin/chmod 644 index.html
