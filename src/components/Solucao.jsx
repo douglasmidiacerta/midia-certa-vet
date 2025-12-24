@@ -1,10 +1,11 @@
 import React from 'react';
 import Reveal from './Reveal';
+import { MonitorIcon, MegaphoneIcon, ChartBarIcon, ChatBubbleIcon } from './Icons';
 
 const Solucao = () => {
   const solutions = [
     {
-      icon: '🧩',
+      icon: <MonitorIcon className="w-8 h-8" />,
       title: 'Criação ou ajuste da página da clínica',
       items: [
         'Desenvolvimento ou otimização de página focada em conversão (ligações e WhatsApp)',
@@ -13,7 +14,7 @@ const Solucao = () => {
       ],
     },
     {
-      icon: '🎯',
+      icon: <MegaphoneIcon className="w-8 h-8" />,
       title: 'Gestão profissional de anúncios (Google e redes)',
       items: [
         'Planejamento e criação de campanhas para sua região e tipos de serviço',
@@ -22,7 +23,7 @@ const Solucao = () => {
       ],
     },
     {
-      icon: '📊',
+      icon: <ChartBarIcon className="w-8 h-8" />,
       title: 'Acompanhamento e comunicação contínua',
       items: [
         'Relatórios mensais simples com ligações, mensagens e custo por agendamento',
@@ -30,7 +31,7 @@ const Solucao = () => {
       ],
     },
     {
-      icon: '🤝',
+      icon: <ChatBubbleIcon className="w-8 h-8" />,
       title: 'Suporte ao atendimento (bônus de serviço)',
       items: [
         'Roteiro para WhatsApp focado em transformar contatos em agendamentos',
@@ -57,8 +58,10 @@ const Solucao = () => {
               key={index}
               className="bg-white rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
             >
-              <div className="text-[40px] mb-4">{solution.icon}</div>
-              <h3 className="text-lg font-semibold text-primary mb-3">
+              <div className="mb-4 text-primary">
+                {solution.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-textPrimary mb-3">
                 {solution.title}
               </h3>
               <ul className="text-[15px] text-[#555] leading-[1.8] text-left space-y-2">
