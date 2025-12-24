@@ -1,5 +1,7 @@
 import React from 'react';
 import Reveal from './Reveal';
+import FormLead from './FormLead';
+import { WhatsIcon } from './Icons';
 
 const CTA = () => {
   // Substitua com seu número real
@@ -7,7 +9,7 @@ const CTA = () => {
   const whatsappMessage = encodeURIComponent('Olá! Gostaria de saber mais sobre como aumentar agendamentos da minha clínica.');
 
   return (
-    <section id="contato" className="bg-gradient-to-br from-primary to-secondary text-white py-12 md:py-16 px-5 text-center">
+    <section id="contato" className="bg-neutral text-textPrimary py-12 md:py-16 px-5">
       <Reveal className="max-w-4xl mx-auto">
         {/* Título */}
         <h2 className="text-3xl md:text-4xl font-bold mb-5">
