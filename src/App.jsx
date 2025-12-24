@@ -7,6 +7,9 @@ import Resultados from './components/Resultados';
 import ComoFunciona from './components/ComoFunciona';
 import Portfolio from './components/Portfolio';
 import FAQ from './components/FAQ';
+import Depoimentos from './components/Depoimentos';
+import Logos from './components/Logos';
+import Sobre from './components/Sobre';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -21,6 +24,10 @@ function App() {
       <Resultados />
       <ComoFunciona />
       <Portfolio />
+      <Logos />
+      <Resultados />
+      <Depoimentos />
+      <Sobre />
       <FAQ />
       <CTA />
       <Footer />
