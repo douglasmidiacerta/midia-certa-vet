@@ -28,7 +28,7 @@ const CTA = () => {
             href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-primary px-8 py-4 rounded-lg text-base font-semibold border-none transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5 inline-flex items-center gap-2"
+            className="bg-white text-primary px-8 py-4 rounded-lg text-base font-semibold border-none transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(255,255,255,0.3)] inline-flex items-center gap-2 animate-pulse-subtle"
           >
             <span>💬</span>
             <span>Conversar no WhatsApp</span>
@@ -37,7 +37,7 @@ const CTA = () => {
           {/* Botão Telefone */}
           <a
             href={`tel:+${phoneNumber}`}
-            className="bg-transparent text-white px-8 py-4 border-2 border-white rounded-lg text-base font-semibold transition-all duration-300 hover:bg-white/10 inline-flex items-center gap-2"
+            className="bg-transparent text-white px-8 py-4 border-2 border-white rounded-lg text-base font-semibold transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 inline-flex items-center gap-2"
           >
             <span>☎️</span>
             <span>Me Ligar Agora</span>

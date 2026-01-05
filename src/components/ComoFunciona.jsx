@@ -35,10 +35,10 @@ const ComoFunciona = () => {
         {/* Grid de Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-stretch">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="bg-white border-t-4 border-primary rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center h-full">
+            <div key={index} className="relative group">
+              <div className="bg-white border-t-4 border-primary rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center h-full transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] hover:-translate-y-2">
                 {/* Number Circle */}
-                <div className="w-[50px] h-[50px] bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                <div className="w-[50px] h-[50px] bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
                   {step.number}
                 </div>
                 

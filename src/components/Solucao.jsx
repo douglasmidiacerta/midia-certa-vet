@@ -56,9 +56,9 @@ const Solucao = () => {
           {solutions.map((solution, index) => (
             <Reveal delay={index * 100}
               key={index}
-              className="bg-white rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
+              className="bg-white rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] group cursor-pointer"
             >
-              <div className="mb-4 text-primary">
+              <div className="mb-4 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                 {solution.icon}
               </div>
               <h3 className="text-lg font-semibold text-textPrimary mb-3">

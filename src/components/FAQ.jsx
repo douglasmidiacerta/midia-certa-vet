@@ -58,11 +58,15 @@ const FAQ = () => {
               </button>
 
               {/* Answer */}
-              {openIndex === index && (
-                <div className="bg-white px-5 py-5 text-[#555] text-[15px] leading-relaxed border-t border-gray-200">
-                  {faq.answer}
-                </div>
-              )}
+              <div 
+                className={`bg-white px-5 text-[#555] text-[15px] leading-relaxed border-t border-gray-200 overflow-hidden transition-all duration-300 ease-in-out ${
+                  openIndex === index 
+                    ? 'max-h-96 py-5 opacity-100' 
+                    : 'max-h-0 py-0 opacity-0'
+                }`}
+              >
+                {faq.answer}
+              </div>
             </div>
           ))}
         </div>

@@ -39,9 +39,9 @@ const Problemas = () => {
           {problems.map((problem, index) => (
             <Reveal delay={index * 80}
               key={index}
-              className="bg-[#fff3cd] border-l-4 border-cta rounded-lg p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
+              className="bg-[#fff3cd] border-l-4 border-cta rounded-lg p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] group cursor-pointer"
             >
-              <div className="mb-3">{problem.icon}</div>
+              <div className="mb-3 transition-all duration-300 group-hover:scale-110">{problem.icon}</div>
               <h3 className="text-lg font-semibold text-[#c92a2a] mb-2.5">
                 {problem.title}
               </h3>

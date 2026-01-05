@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Reveal from './Reveal';
 import FormLead from './FormLead';
 import { PawIcon, BoneIcon, StethoscopeIcon, WhatsIcon } from './Icons';
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [typedText, setTypedText] = useState('');
+  const fullText = 'Mais Agendamentos Para Sua Clínica Veterinária em BH';
+  
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setTypedText(fullText.substring(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 50);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   const handleCTAClick = () => {
     document.querySelector('#contato')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -11,13 +35,28 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="relative overflow-hidden min-h-[650px] bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center px-5 py-16 md:px-10 lg:px-16"
+      className="relative overflow-hidden min-h-[650px] bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 animate-gradient flex items-center px-5 py-16 md:px-10 lg:px-16"
       style={{ paddingTop: '100px' }}
     >
-      {/* Decorações sutis com SVGs */}
-      <div className="pointer-events-none absolute -top-10 -right-10 opacity-10"><PawIcon className="w-28 h-28" /></div>
-      <div className="pointer-events-none absolute bottom-6 left-8 opacity-10 rotate-12"><BoneIcon className="w-16 h-16" /></div>
-      <div className="pointer-events-none absolute top-24 right-1/4 opacity-10 -rotate-12"><StethoscopeIcon className="w-20 h-20" /></div>
+      {/* Decorações sutis com SVGs com efeito parallax */}
+      <div 
+        className="pointer-events-none absolute -top-10 -right-10 opacity-10 transition-transform duration-300"
+        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+      >
+        <PawIcon className="w-28 h-28" />
+      </div>
+      <div 
+        className="pointer-events-none absolute bottom-6 left-8 opacity-10 rotate-12 transition-transform duration-300"
+        style={{ transform: `translateY(${scrollY * 0.3}px) rotate(12deg)` }}
+      >
+        <BoneIcon className="w-16 h-16" />
+      </div>
+      <div 
+        className="pointer-events-none absolute top-24 right-1/4 opacity-10 -rotate-12 transition-transform duration-300"
+        style={{ transform: `translateY(${scrollY * 0.4}px) rotate(-12deg)` }}
+      >
+        <StethoscopeIcon className="w-20 h-20" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -30,9 +69,16 @@ const Hero = () => {
 
         {/* Coluna Esquerda */}
         <div className="text-center lg:text-left">
-          {/* Título */}
+          {/* Título com efeito de digitação */}
           <h1 className="text-textPrimary font-bold leading-tight mb-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-[900px] mx-auto lg:mx-0">
-          Mais Agendamentos Para Sua Clínica Veterinária em BH – Através de um Serviço Especializado de Marketing
+          <span className="inline-block min-h-[1.2em]">
+            {typedText}
+            <span className="animate-pulse">|</span>
+          </span>
+          <br />
+          <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+            – Através de um Serviço Especializado de Marketing
+          </span>
         </h1>
 
         {/* Subtítulo */}
@@ -58,7 +104,7 @@ const Hero = () => {
         <div className="mb-6">
           <button
             onClick={handleCTAClick}
-            className="bg-cta text-white px-8 md:px-10 py-4 rounded-lg text-base md:text-lg font-semibold cursor-pointer border-none transition-all duration-300 hover:bg-[#ff5252] hover:-translate-y-0.5 hover:shadow-[0_8px_15px_rgba(255,107,107,0.3)]"
+            className="bg-cta text-white px-8 md:px-10 py-4 rounded-lg text-base md:text-lg font-semibold cursor-pointer border-none transition-all duration-300 hover:bg-[#ff5252] hover:-translate-y-0.5 hover:shadow-[0_8px_15px_rgba(255,107,107,0.3)] hover:scale-105 animate-pulse-subtle"
           >
             <span className="inline-flex items-center gap-2">
               <WhatsIcon className="w-5 h-5 text-white" />
@@ -77,21 +123,23 @@ const Hero = () => {
         </div>
         {/* Coluna Direita: Imagem + Selo */}
         <div className="order-first lg:order-none">
-          <div className="relative">
-            <div className="bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1551046600-64ec07ebdb0b?q=80&w=1080&auto=format&fit=crop"
-                alt="Atendimento veterinário"
-                className="w-full h-[320px] md:h-[380px] object-cover"
-                loading="lazy"
-              />
+          <Reveal>
+            <div className="relative group">
+              <div className="bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-300 group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)]">
+                <img
+                  src="https://images.unsplash.com/photo-1551046600-64ec07ebdb0b?q=80&w=1080&auto=format&fit=crop"
+                  alt="Atendimento veterinário"
+                  className="w-full h-[320px] md:h-[380px] object-cover transition-all duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              {/* Selo/Card de resultado */}
+              <div className="absolute -bottom-5 left-5 bg-white rounded-lg shadow-[0_6px_20px_rgba(0,0,0,0.12)] px-4 py-3 flex items-center gap-2 transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_25px_rgba(0,0,0,0.18)]">
+                <span className="text-primary text-lg font-bold">+28</span>
+                <span className="text-sm text-textPrimary">agendamentos/mês em BH</span>
+              </div>
             </div>
-            {/* Selo/Card de resultado */}
-            <div className="absolute -bottom-5 left-5 bg-white rounded-lg shadow-[0_6px_20px_rgba(0,0,0,0.12)] px-4 py-3 flex items-center gap-2">
-              <span className="text-primary text-lg font-bold">+28</span>
-              <span className="text-sm text-textPrimary">agendamentos/mês em BH</span>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </div>

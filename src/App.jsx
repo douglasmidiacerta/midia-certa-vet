@@ -13,10 +13,12 @@ import Sobre from './components/Sobre';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   return (
     <div className="App">
+      <ScrollProgress />
       <Header />
       <Hero />
       <Problemas />

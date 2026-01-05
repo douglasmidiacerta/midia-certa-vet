@@ -75,10 +75,10 @@ const Portfolio = () => {
           {regularClients.map((client, index) => (
             <Reveal delay={index * 60}
               key={index}
-              className="bg-white rounded-lg p-5 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_25px_rgba(0,0,0,0.12)] hover:bg-[#f9f9f9]"
+              className="bg-white rounded-lg p-5 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_25px_rgba(0,0,0,0.12)] hover:bg-[#f9f9f9] group cursor-pointer"
             >
               {/* Placeholder para Logo/Screenshot */}
-              <div className="h-[120px] bg-gradient-to-br from-primary/10 to-secondary/10 rounded-md mb-4 flex items-center justify-center text-primary text-2xl font-bold">
+              <div className="h-[120px] bg-gradient-to-br from-primary/10 to-secondary/10 rounded-md mb-4 flex items-center justify-center text-primary text-2xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                 🐾
               </div>
               
