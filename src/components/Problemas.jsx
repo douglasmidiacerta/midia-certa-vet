@@ -27,37 +27,55 @@ const Problemas = () => {
   ];
 
   return (
-    <section id="problemas" className="bg-white py-12 md:py-16 px-5">
-      <div className="max-w-6xl mx-auto">
+    <section id="problemas" className="bg-neutral-50 py-16 md:py-24 px-5">
+      <div className="max-w-7xl mx-auto">
         {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-bold text-textPrimary text-center mb-10 md:mb-12">
-          Você enfrenta esses problemas?
-        </h2>
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 bg-accent/10 text-accent font-semibold text-sm rounded-full mb-4">
+            Desafios Comuns
+          </span>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-textPrimary mb-4">
+            Você Enfrenta Esses <span className="text-gradient-warm">Problemas?</span>
+          </h2>
+          <p className="text-lg text-textSecondary max-w-2xl mx-auto">
+            Reconheça os sinais de que sua clínica precisa de uma estratégia de marketing estruturada
+          </p>
+        </div>
 
         {/* Grid de Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {problems.map((problem, index) => (
-            <Reveal delay={index * 80}
-              key={index}
-              className="bg-[#fff3cd] border-l-4 border-cta rounded-lg p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] group cursor-pointer"
-            >
-              <div className="mb-3 transition-all duration-300 group-hover:scale-110">{problem.icon}</div>
-              <h3 className="text-lg font-semibold text-[#c92a2a] mb-2.5">
-                {problem.title}
-              </h3>
-              <p className="text-[15px] text-[#555] leading-relaxed">
-                {problem.description}
-              </p>
+            <Reveal delay={index * 80} key={index}>
+              <div className="card-hover group bg-gradient-to-br from-white to-neutral-50 border-l-4 border-accent relative overflow-hidden">
+                {/* Efeito shimmer no hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer"></div>
+                
+                <div className="relative">
+                  <div className="mb-4 p-3 bg-accent/10 rounded-xl inline-block transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/20">
+                    {problem.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-textPrimary mb-3 group-hover:text-accent transition-colors">
+                    {problem.title}
+                  </h3>
+                  <p className="text-sm text-textSecondary leading-relaxed">
+                    {problem.description}
+                  </p>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>
 
        {/* Fechamento + CTA inline */}
-       <div className="text-center mt-8">
-         <p className="text-[15px] text-[#555] mb-4">É exatamente esse buraco entre clínica cheia e marketing bem feito que o nosso serviço vem preencher.</p>
-         <a href="#contato" className="inline-block bg-cta text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#ff5252]">
-           Quero entender como esse serviço pode funcionar para minha clínica
-         </a>
+       <div className="text-center mt-16">
+         <div className="max-w-3xl mx-auto glass backdrop-blur-xl rounded-3xl p-8 shadow-medium border border-white/40">
+           <p className="text-lg text-textPrimary mb-6 font-medium">
+             É exatamente esse buraco entre <span className="text-gradient-primary font-bold">clínica cheia</span> e <span className="text-gradient-primary font-bold">marketing bem feito</span> que o nosso serviço vem preencher.
+           </p>
+           <a href="#contato" className="btn-cta inline-flex">
+             Quero Entender Como Esse Serviço Pode Funcionar Para Minha Clínica
+           </a>
+         </div>
        </div>
      </div>
    </section>

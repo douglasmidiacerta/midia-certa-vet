@@ -41,37 +41,50 @@ const Solucao = () => {
   ];
 
   return (
-    <section id="solucao" className="bg-neutral py-12 md:py-16 px-5">
-      <div className="max-w-6xl mx-auto">
+    <section id="solucao" className="bg-white py-16 md:py-24 px-5 relative overflow-hidden">
+      {/* Decoração de fundo */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-bold text-textPrimary text-center mb-3">
-          O Que Fazemos Por Você, Todo Mês
-        </h2>
-        <p className="text-lg text-textSecondary text-center mb-10 md:mb-12 max-w-3xl mx-auto">
-          Serviço completo de atração de novos clientes: planejamento, criação, gestão e otimização das ações digitais que trazem pacientes para a sua clínica.
-        </p>
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary font-semibold text-sm rounded-full mb-4">
+            Nossa Solução
+          </span>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-textPrimary mb-4">
+            O Que Fazemos Por Você, <span className="text-gradient-primary">Todo Mês</span>
+          </h2>
+          <p className="text-lg text-textSecondary max-w-3xl mx-auto">
+            Serviço completo de atração de novos clientes: planejamento, criação, gestão e otimização das ações digitais que trazem pacientes para a sua clínica.
+          </p>
+        </div>
 
         {/* Grid de Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {solutions.map((solution, index) => (
-            <Reveal delay={index * 100}
-              key={index}
-              className="bg-white rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.08)] text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] group cursor-pointer"
-            >
-              <div className="mb-4 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                {solution.icon}
+            <Reveal delay={index * 100} key={index}>
+              <div className="card-hover group bg-white relative overflow-hidden border-t-4 border-secondary">
+                {/* Gradiente de hover */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                
+                <div className="relative text-center">
+                  <div className="mb-4 mx-auto w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-soft group-hover:shadow-glow-primary">
+                    {solution.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-textPrimary mb-4 group-hover:text-primary transition-colors">
+                    {solution.title}
+                  </h3>
+                  <ul className="text-sm text-textSecondary leading-relaxed text-left space-y-3">
+                    {solution.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start gap-2">
+                        <span className="flex-shrink-0 w-5 h-5 bg-secondary/20 text-secondary rounded-full flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                        <span className="flex-1">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-textPrimary mb-3">
-                {solution.title}
-              </h3>
-              <ul className="text-[15px] text-[#555] leading-[1.8] text-left space-y-2">
-                {solution.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start">
-                    <span className="mr-2 text-success">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </Reveal>
           ))}
         </div>

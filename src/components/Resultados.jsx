@@ -82,39 +82,62 @@ const Resultados = () => {
   ];
 
   return (
-    <section id="resultados" className="bg-white py-12 md:py-16 px-5">
-      <div className="max-w-6xl mx-auto">
+    <section id="resultados" className="bg-gradient-to-br from-neutral-50 to-white py-16 md:py-24 px-5">
+      <div className="max-w-7xl mx-auto">
         {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-bold text-textPrimary text-center mb-10 md:mb-12">
-          Resultados Reais de Clínicas (Casos de Sucesso)
-        </h2>
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 bg-cta/10 text-cta font-semibold text-sm rounded-full mb-4">
+            Casos de Sucesso
+          </span>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-textPrimary mb-4">
+            Resultados <span className="text-gradient-primary">Reais de Clínicas</span>
+          </h2>
+          <p className="text-lg text-textSecondary max-w-2xl mx-auto">
+            Números comprovados de clínicas que transformaram seu marketing digital
+          </p>
+        </div>
 
         {/* Grid de Destaques */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {results.map((result, index) => (
-            <Reveal delay={index * 80}
-              key={index}
-              className="bg-gradient-to-br from-primary to-secondary text-white rounded-xl p-8 text-center shadow-[0_4px_12px_rgba(0,0,0,0.1)] transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_20px_rgba(0,0,0,0.2)] cursor-pointer"
-            >
-              <CounterAnimation 
-                end={result.number} 
-                prefix={result.prefix} 
-                suffix={result.suffix}
-              />
-              <div className="text-base opacity-95 mb-2">
-                {result.description}
-              </div>
-              <div className="text-[13px] opacity-85">
-                {result.subtitle}
+            <Reveal delay={index * 80} key={index}>
+              <div className="card-hover group relative overflow-hidden">
+                {/* Fundo com gradiente animado */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-100 group-hover:opacity-90 transition-opacity"></div>
+                
+                {/* Padrão decorativo */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white rounded-full -mr-12 -mt-12"></div>
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-white rounded-full -ml-16 -mb-16"></div>
+                </div>
+                
+                <div className="relative text-center text-white p-8">
+                  <CounterAnimation 
+                    end={result.number} 
+                    prefix={result.prefix} 
+                    suffix={result.suffix}
+                  />
+                  <div className="text-base opacity-95 mb-2 font-medium">
+                    {result.description}
+                  </div>
+                  {result.subtitle && (
+                    <div className="text-sm opacity-85">
+                      {result.subtitle}
+                    </div>
+                  )}
+                </div>
+                
+                {/* Brilho no hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity animate-shimmer"></div>
               </div>
             </Reveal>
           ))}
         </div>
 
        {/* CTA secundário */}
-       <div className="text-center mt-10">
-         <a href="#contato" className="inline-block bg-transparent text-primary border-2 border-primary px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-primary hover:text-white">
-           Quero saber o que podemos gerar para a minha clínica
+       <div className="text-center mt-12">
+         <a href="#contato" className="btn-secondary">
+           Quero Saber O Que Podemos Gerar Para Minha Clínica
          </a>
        </div>
      </div>

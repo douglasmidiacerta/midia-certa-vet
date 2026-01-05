@@ -9,16 +9,25 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#1a1a2e] text-white py-10 md:py-12 px-5">
+    <footer className="bg-neutral-900 text-white py-12 md:py-16 px-5 relative overflow-hidden">
+      {/* Decoração de fundo */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+      
       <Reveal>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Grid Principal */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-10">
           {/* Coluna 1 - Informações da Empresa */}
           <div>
-            <h3 className="text-lg font-bold text-primary mb-3">Mídias Certa Vet</h3>
-            <p className="text-sm text-white/80 leading-relaxed mb-4">
-              Solução completa para clínicas veterinárias aumentarem agendamentos.
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-soft">
+                <span className="text-white text-xl">🐾</span>
+              </div>
+              <h3 className="font-heading text-xl font-bold text-white">Mídias Certa Vet</h3>
+            </div>
+            <p className="text-sm text-white/70 leading-relaxed mb-4">
+              Solução completa de marketing digital para clínicas veterinárias aumentarem agendamentos.
             </p>
             {/* Social Links (opcional) */}
             <div className="flex gap-3">
@@ -42,42 +51,42 @@ const Footer = () => {
 
           {/* Coluna 2 - Links Rápidos */}
           <div>
-            <h3 className="text-base font-semibold mb-3">Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-base font-bold text-white mb-4">Links Rápidos</h3>
+            <ul className="space-y-2.5">
               <li>
                 <a 
                   href="#hero" 
                   onClick={(e) => { e.preventDefault(); handleScrollTo('#hero'); }}
-                  className="text-sm text-white/70 hover:text-primary hover:underline transition-colors"
+                  className="text-sm text-white/70 hover:text-primary hover:translate-x-1 inline-block transition-all"
                 >
-                  Início
+                  → Início
                 </a>
               </li>
               <li>
                 <a 
                   href="#funciona" 
                   onClick={(e) => { e.preventDefault(); handleScrollTo('#funciona'); }}
-                  className="text-sm text-white/70 hover:text-primary hover:underline transition-colors"
+                  className="text-sm text-white/70 hover:text-primary hover:translate-x-1 inline-block transition-all"
                 >
-                  Como Funciona
+                  → Como Funciona
                 </a>
               </li>
               <li>
                 <a 
                   href="#portfolio" 
                   onClick={(e) => { e.preventDefault(); handleScrollTo('#portfolio'); }}
-                  className="text-sm text-white/70 hover:text-primary hover:underline transition-colors"
+                  className="text-sm text-white/70 hover:text-primary hover:translate-x-1 inline-block transition-all"
                 >
-                  Portfólio
+                  → Portfólio
                 </a>
               </li>
               <li>
                 <a 
                   href="#contato" 
                   onClick={(e) => { e.preventDefault(); handleScrollTo('#contato'); }}
-                  className="text-sm text-white/70 hover:text-primary hover:underline transition-colors"
+                  className="text-sm text-white/70 hover:text-primary hover:translate-x-1 inline-block transition-all"
                 >
-                  Contato
+                  → Contato
                 </a>
               </li>
             </ul>
@@ -85,37 +94,64 @@ const Footer = () => {
 
           {/* Coluna 3 - Contato */}
           <div>
-            <h3 className="text-base font-semibold mb-3">Contato</h3>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li>Tel: +55 31 99999-9999</li>
-              <li>Email: contato@midiacertavet.com.br</li>
-              <li>Local: Belo Horizonte, MG</li>
+            <h3 className="text-base font-bold text-white mb-4">Contato</h3>
+            <ul className="space-y-3 text-sm text-white/70">
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <span>+55 31 99999-9999</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <span>contato@midiacertavet.com.br</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <span>Belo Horizonte, MG</span>
+              </li>
             </ul>
           </div>
 
-          {/* Coluna 4 - Legal */}
+          {/* Coluna 4 - Newsletter */}
           <div>
-            <h3 className="text-base font-semibold mb-3">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-[13px] text-white/60 hover:text-white transition-colors">
-                  Política de Privacidade
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[13px] text-white/60 hover:text-white transition-colors">
-                  Termos de Uso
-                </a>
-              </li>
-            </ul>
+            <h3 className="text-base font-bold text-white mb-4">Newsletter</h3>
+            <p className="text-sm text-white/70 mb-4">
+              Receba dicas de marketing para sua clínica
+            </p>
+            <div className="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Seu e-mail"
+                className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-primary transition-colors"
+              />
+              <button className="px-4 py-2 bg-gradient-primary text-white rounded-lg text-sm font-semibold hover:shadow-glow-primary transition-all">
+                OK
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Linha Divisória */}
-        <div className="border-t border-white/10 pt-6 mt-6">
-          <p className="text-center text-xs text-white/60">
-            © {currentYear} Mídias Certa Vet. Todos os direitos reservados.
-          </p>
+        <div className="border-t border-white/10 pt-8 mt-10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-white/60">
+              © {currentYear} Mídias Certa Vet. Todos os direitos reservados.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+                Política de Privacidade
+              </a>
+              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+                Termos de Uso
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       </Reveal>
